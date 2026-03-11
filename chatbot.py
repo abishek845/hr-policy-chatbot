@@ -1,12 +1,11 @@
 # chatbot.py - AI Chatbot Logic
 
-
-
 import os
 from groq import Groq
 from policy_data import get_policy
 
 # Initialize Groq client (API key from environment variable)
+# Streamlit Cloud injects secrets as env vars automatically
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 def ask_bot(user_question: str) -> str:
@@ -27,12 +26,13 @@ def ask_bot(user_question: str) -> str:
     Employee Question: {user_question}
     
     Answer clearly and professionally. If the policy doesn't cover this, politely direct to HR.
+    Keep responses concise but helpful.
     """
     
     # Step 3: Get AI response
     try:
         response = client.chat.completions.create(
-            model="llama-3.1-8b-instant",  # ✅ Updated model name
+            model="llama-3.1-8b-instant",  # Updated free model
             messages=[{"role": "user", "content": prompt}],
             max_tokens=500,
             temperature=0.3  # Keep answers consistent

@@ -41,13 +41,22 @@ HR_POLICIES = {
 def get_policy(topic: str) -> str:
     """Retrieve policy based on topic keyword"""
     topic = topic.lower()
-    if "leave" in topic:
+    
+    # Leave keywords
+    if any(word in topic for word in ["leave", "vacation", "time off", "casual", "sick", "earned"]):
         return HR_POLICIES["leave"]
-    elif "wfh" in topic or "work from home" in topic or "remote" in topic:
+    
+    # WFH keywords
+    if any(word in topic for word in ["wfh", "work from home", "remote", "home office", "work remotely"]):
         return HR_POLICIES["wfh"]
-    elif "salary" in topic or "pay" in topic or "benefit" in topic:
+    
+    # Salary keywords
+    if any(word in topic for word in ["salary", "pay", "payment", "benefit", "allowance", "pf", "bonus", "insurance"]):
         return HR_POLICIES["salary"]
-    elif "onboard" in topic or "join" in topic or "new" in topic:
+    
+    # Onboarding keywords
+    if any(word in topic for word in ["onboard", "join", "new", "first day", "probation", "buddy", "orientation"]):
         return HR_POLICIES["onboarding"]
-    else:
-        return "I'm not sure about that policy. Please contact HR at hr@company.com for details."
+    
+    # Fallback for unknown topics
+    return "I'm not sure about that policy. Please contact HR at hr@company.com for details."

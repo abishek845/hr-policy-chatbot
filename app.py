@@ -10,7 +10,7 @@ st.set_page_config(page_title="HR Policy Bot", page_icon="🤖")
 st.title("🤖 HR Policy Assistant")
 st.caption("Ask me anything about company policies!")
 
-# Developer Branding
+# Developer Branding (below title, above chat)
 st.markdown("---")
 st.caption("👨‍💻 **Built by Abishek Pandian** | GitHub: [@abishek845](https://github.com/abishek845)")
 st.markdown("---")
