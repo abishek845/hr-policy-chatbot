@@ -1,7 +1,6 @@
 # chatbot.py - AI Chatbot Logic
 
-from dotenv import load_dotenv
-load_dotenv()  # This loads the .env file!
+
 
 import os
 from groq import Groq
