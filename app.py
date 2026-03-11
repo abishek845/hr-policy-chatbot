@@ -10,7 +10,7 @@ st.set_page_config(page_title="HR Policy Bot", page_icon="🤖")
 st.title("🤖 HR Policy Assistant")
 st.caption("Ask me anything about company policies!")
 
-# 👇 ADD YOUR BRANDING HERE 👇
+# Developer Branding
 st.markdown("---")
 st.caption("👨‍💻 **Built by Abishek Pandian** | GitHub: [@abishek845](https://github.com/abishek845)")
 st.markdown("---")
@@ -39,7 +39,3 @@ if prompt := st.chat_input("Ask about leave, WFH, salary, onboarding..."):
     
     # Save assistant message
     st.session_state.messages.append({"role": "assistant", "content": response})
-
-# 👇 ADD FOOTER AT BOTTOM 👇
-st.markdown("---")
-st.caption("🔗 Source Code: [GitHub](https://github.com/abishek845/hr-policy-chatbot)")
